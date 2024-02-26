@@ -21,6 +21,8 @@ return new class extends Migration
             $table->integer('stars')->default(0); // Numero di stelle ricevute
             $table->integer('forks')->default(0); // Numero di fork
             $table->string('language')->nullable(); // Linguaggio di programmazione principale (opzionale)
+            $table->longText('random_html')->nullable(); // Random HTML field (opzionale)
+            $table->longText('long_description')->nullable(); // Descrizione lunga del progetto (opzionale)
             $table->timestamp('last_commit_at')->nullable(); // Data e ora dell'ultimo commit (opzionale)
             $table->timestamps();
         });

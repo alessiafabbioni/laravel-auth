@@ -24,6 +24,8 @@ class ProjectFactory extends Factory
             'forks' => $this->faker->numberBetween(0, 500), // Genera un numero casuale di fork
             'language' => $this->faker->randomElement(['PHP', 'JavaScript', 'Python', 'Java', 'Ruby', 'Vue', 'React', 'MongoDB', 'HTML', 'Css']), // Seleziona casualmente un linguaggio
             'last_commit_at' => $this->faker->dateTimeBetween('-1 year', 'now'), // Genera una data e ora di commit casuale nell'ultimo anno
+            'random_html' => $this->faker->randomHtml(),
+            'long_description' => $this->faker->paragraphs(3, true),
         ];
     }
 }

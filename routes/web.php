@@ -16,7 +16,6 @@ use App\Http\Controllers\ProjectController;
 */
 
 Route::get('/', [ProjectController :: class, 'index'])->name('pages.index');
-Route::get('/project/{id}', [ProjectController :: class, 'show'])->name('project.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -27,5 +26,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/project/{id}', [ProjectController :: class, 'show'])->name('project.show');
+
 
 require __DIR__.'/auth.php';
